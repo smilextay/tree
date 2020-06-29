@@ -79,40 +79,40 @@ func TestProOderTraversal(t *testing.T) {
 	node := Build(data)
 	result := node.PreOderTraversal()
 	if len(result) != len(except) {
-		t.Fatal("un except result:", result)
+		t.Fatal("un except result in PreOderTraversal:", result)
 	}
 	for i := 0; i < len(result); i++ {
 		if except[i] != result[i] {
-			t.Fatal("un except result:", result)
+			t.Fatal("un except result in PreOderTraversal:", result)
 		}
 	}
 }
 
-func InProOderTraversal(t *testing.T) {
+func TestInProOderTraversal(t *testing.T) {
 	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
 	except := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	node := Build(data)
 	result := node.InOderTraversal()
 	if len(result) != len(except) {
-		t.Fatal("un except result:", result)
+		t.Fatal("un except result in InOderTraversal:", result)
 	}
 	for i := 0; i < len(result); i++ {
 		if except[i] != result[i] {
-			t.Fatal("un except result:", result)
+			t.Fatal("un except result in InOderTraversal:", result)
 		}
 	}
 }
-func PostProOderTraversal(t *testing.T) {
+func TestPostProOderTraversal(t *testing.T) {
 	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
 	except := []int{2, 1, 4, 3, 7, 6, 8, 5}
 	node := Build(data)
 	result := node.PostOderTraversal()
 	if len(result) != len(except) {
-		t.Fatal("un except result:", result)
+		t.Fatal("un except result in PostOderTraversal:", result)
 	}
 	for i := 0; i < len(result); i++ {
 		if except[i] != result[i] {
-			t.Fatal("un except result:", result)
+			t.Fatal("un except result in PostOderTraversal:", result)
 		}
 	}
 }
