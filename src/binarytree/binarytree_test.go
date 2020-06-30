@@ -73,7 +73,7 @@ func TestBuild(t *testing.T) {
 	}
 
 }
-func TestProOderTraversal(t *testing.T) {
+func TestPreOderTraversal(t *testing.T) {
 	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
 	except := []int{5, 3, 1, 2, 4, 8, 6, 7}
 	node := Build(data)
@@ -88,7 +88,7 @@ func TestProOderTraversal(t *testing.T) {
 	}
 }
 
-func TestInProOderTraversal(t *testing.T) {
+func TestInOderTraversal(t *testing.T) {
 	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
 	except := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	node := Build(data)
@@ -102,7 +102,7 @@ func TestInProOderTraversal(t *testing.T) {
 		}
 	}
 }
-func TestPostProOderTraversal(t *testing.T) {
+func TestPostOderTraversal(t *testing.T) {
 	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
 	except := []int{2, 1, 4, 3, 7, 6, 8, 5}
 	node := Build(data)
@@ -129,4 +129,15 @@ func TestBFS(t *testing.T) {
 			t.Fatal("un except result in PostOderTraversal:", result)
 		}
 	}
+}
+
+func TestMaxDepth(t *testing.T) {
+	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
+	node := Build(data)
+	except := 4
+	result := node.MaxDep()
+	if except != result {
+		t.Fatal("un excpet result :", result)
+	}
+
 }

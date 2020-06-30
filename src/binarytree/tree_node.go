@@ -2,9 +2,10 @@ package binarytree
 
 //TreeNode   a binary tree
 type TreeNode struct {
-	Value int
-	Left  *TreeNode
-	Right *TreeNode
+	Value  int
+	Parent *TreeNode
+	Left   *TreeNode
+	Right  *TreeNode
 }
 
 //Build build a binarytree sutrcut
@@ -33,7 +34,8 @@ func (node *TreeNode) newNode(value int) {
 			node.Left.newNode(value)
 		} else {
 			node.Left = &TreeNode{
-				Value: value,
+				Parent: node,
+				Value:  value,
 			}
 			return
 		}
@@ -43,10 +45,10 @@ func (node *TreeNode) newNode(value int) {
 			node.Right.newNode(value)
 		} else {
 			node.Right = &TreeNode{
-				Value: value,
+				Parent: node,
+				Value:  value,
 			}
 			return
 		}
 	}
 }
-
