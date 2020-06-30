@@ -7,9 +7,9 @@ func (node *TreeNode) InOderTraversal() []int {
 		return []int{}
 	}
 	l := node.Left.InOderTraversal()
-	data := append(l, node.Value)
-
 	r := node.Right.InOderTraversal()
+
+	data := append(l, node.Value)
 	data = append(data, r...)
 	return data
 }
