@@ -116,6 +116,17 @@ func TestPostProOderTraversal(t *testing.T) {
 		}
 	}
 }
-func checkNode() {
-
+func TestBFS(t *testing.T) {
+	data := []int{5, 8, 6, 3, 4, 7, 1, 2}
+	except := []int{5, 3, 8, 1, 4, 6, 2, 7}
+	node := Build(data)
+	result := node.BFS()
+	if len(result) != len(except) {
+		t.Fatal("un except result in PostOderTraversal:", result)
+	}
+	for i := 0; i < len(result); i++ {
+		if except[i] != result[i] {
+			t.Fatal("un except result in PostOderTraversal:", result)
+		}
+	}
 }
